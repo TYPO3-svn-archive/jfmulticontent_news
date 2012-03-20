@@ -1,0 +1,32 @@
+plugin.tx_jfmulticontent_pi1 {
+	views {
+		tt_news {
+			content = RECORDS
+			content {
+				tables = tt_news
+				source.data = register:uid
+				conf.tt_news = COA
+				conf.tt_news {
+					10 = TEXT
+					10.field = bodytext
+					10.wrap = <p> | </p>
+					20 = IMAGE
+					20 {
+						file.import = uploads/pics/
+						file.import.field = image
+						file.width = 100c
+						file.height = 100c
+					}
+					20.wrap = <span> | </span>
+				}
+				dontCheckPid = 1
+			}
+			title < .content
+			title.conf.tt_news >
+			title.conf.tt_news = TEXT
+			title.conf.tt_news {
+				data = field:title
+			}
+		}
+	}
+}

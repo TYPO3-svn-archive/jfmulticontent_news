@@ -1,0 +1,38 @@
+plugin.tx_jfmulticontent_pi1 {
+	views {
+		feuser {
+			content = RECORDS
+			content {
+				tables = fe_users
+				source.data = register:uid
+				conf.fe_users = COA
+				conf.fe_users {
+					10 = TEXT
+					10.field = username
+					10.wrap = <p> | </p>
+					20 = IMAGE
+					20 {
+						file.import = uploads/pics/
+						file.import.field = image
+						file.width = 100c
+						file.height = 100c
+					}
+					20.wrap = <span> | </span>
+					30 = TEXT
+					30.typolink.parameter.field = www
+					30.required = 1
+					30.field = www
+					30.wrap = <p> | </p>
+				}
+				dontCheckPid = 1
+			}
+			title < .content
+			title.conf.fe_users >
+			title.conf.fe_users = TEXT
+			title.conf.fe_users {
+				value = {field:first_name} {field:last_name}
+				insertData = 1
+			}
+		}
+	}
+}

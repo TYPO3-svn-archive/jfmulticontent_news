@@ -1,0 +1,3 @@
+
+# cat=basic/enable/10; type=boolean; label=Activate news for jfmulticontent: If set, the news-view will be added to dropdown
+activateNews = 1
