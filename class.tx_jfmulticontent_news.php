@@ -22,7 +22,6 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(PATH_tslib.'class.tslib_pibase.php');
 
 /**
  * News for 'jfmulticontent'.
@@ -79,7 +78,7 @@ class tx_jfmulticontent_news extends tslib_pibase
 	{
 		$this->conf = $conf;
 		$this->cObj = $parent->cObj;
-$this->getNewsRecords();
+		$this->getNewsRecords();
 		// set the titels from flexform
 		$this->titles = t3lib_div::trimExplode(chr(10), $this->cObj->data['pi_flexform']['data']['title']['lDEF']['titles']['vDEF']);
 
